@@ -1,2 +1,53 @@
-<h1>Calculator#index</h1>
-<p>Find me in app/views/calculator/index.html.erb</p>
+<div class="calculator-container" data-controller="calculator">
+  <div class="calculator-form">
+    <div class="input-group">
+      <label>Bill</label>
+      <input type="number" 
+             data-calculator-target="bill" 
+             data-action="input->calculator#calculate">
+    </div>
+
+    <div class="tip-buttons">
+      <label>Select Tip %</label>
+      <div class="button-grid">
+        <button data-tip="5" data-action="click->calculator#selectTip">5%</button>
+        <button data-tip="10" data-action="click->calculator#selectTip">10%</button>
+        <button data-tip="15" data-action="click->calculator#selectTip">15%</button>
+        <button data-tip="25" data-action="click->calculator#selectTip">25%</button>
+        <button data-tip="50" data-action="click->calculator#selectTip">50%</button>
+        <input type="number" 
+               placeholder="Custom" 
+               data-calculator-target="customTip"
+               data-action="input->calculator#customTipInput">
+      </div>
+    </div>
+
+    <div class="input-group">
+      <label>Number of People</label>
+      <input type="number" 
+             data-calculator-target="people"
+             data-action="input->calculator#calculate">
+    </div>
+  </div>
+
+  <div class="results">
+    <div class="result-row">
+      <div class="label">
+        <span>Tip Amount</span>
+        <span class="per-person">/ person</span>
+      </div>
+      <div class="amount" data-calculator-target="tipAmount">$0.00</div>
+    </div>
+
+    <div class="result-row">
+      <div class="label">
+        <span>Total</span>
+        <span class="per-person">/ person</span>
+      </div>
+      <div class="amount" data-calculator-target="totalAmount">$0.00</div>
+    </div>
+
+    <button class="reset-button" 
+            data-action="click->calculator#reset">RESET</button>
+  </div>
+</div>
