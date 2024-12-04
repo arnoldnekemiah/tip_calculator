@@ -1,0 +1,22 @@
+databases:
+  - name: tip-calculator
+    databaseName: tip_calculator
+    user: mysite
+    plan: free
+
+services:
+  - type: web
+    name: tip-calculator
+    runtime: ruby
+    plan: free
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: tip-calculator
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
+      - key: WEB_CONCURRENCY
+        value: 2
