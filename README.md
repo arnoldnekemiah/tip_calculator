@@ -39,9 +39,13 @@ If you have specific database credentials, please update the database.yml file w
 And also be cautious of the Gemfile, you might need to update the gem version if you are using a different version of Ruby.
 
 
-4. Visit the application:
+4. Visit the application (for local version):
 - Main calculator: `http://localhost:3000`
 - Admin dashboard: `http://localhost:3000/admin/dashboard`
+
+## Deployed version
+- Main calculator: `https://tip-calculator-r6ow.onrender.com/`
+- Admin dashboard: `https://tip-calculator-r6ow.onrender.com/admin/dashboard`
 
 ## Implementation Approach
 
@@ -63,6 +67,7 @@ And also be cautious of the Gemfile, you might need to update the gem version if
 ### 3. Admin Dashboard
 - Displays all historical calculations in reverse chronological order
 - Includes detailed information about each calculation
+- Link to the admin dashboard: https://tip-calculator-r6ow.onrender.com/admin/dashboard
 
 
 ## File Structure Overview
