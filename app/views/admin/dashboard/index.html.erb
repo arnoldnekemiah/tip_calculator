@@ -1,0 +1,30 @@
+<div class="admin-dashboard">
+  <h1>Tip Calculations Admin Dashboard</h1>
+  
+  <table class="admin-table">
+    <thead>
+      <tr>
+        <th>Date/Time</th>
+        <th>Bill Amount</th>
+        <th>Tip %</th>
+        <th>Tip Amount</th>
+        <th>Total Bill</th>
+        <th>People</th>
+        <th>Per Person</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @tip_calculations.each do |calc| %>
+        <tr>
+          <td><%= calc.created_at.strftime("%Y-%m-%d %H:%M") %></td>
+          <td>$<%= number_with_precision(calc.bill_amount, precision: 2) %></td>
+          <td><%= number_with_precision(calc.tip_percentage, precision: 1) %>%</td>
+          <td>$<%= number_with_precision(calc.tip_amount, precision: 2) %></td>
+          <td>$<%= number_with_precision(calc.total_bill, precision: 2) %></td>
+          <td><%= calc.number_of_people %></td>
+          <td>$<%= number_with_precision(calc.amount_per_person, precision: 2) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
