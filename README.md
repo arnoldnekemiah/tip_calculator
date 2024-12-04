@@ -19,7 +19,6 @@ A modern web application built with Ruby on Rails that helps users calculate tip
 - PostgreSQL
 - Stimulus.js
 - Turbo
-- HTTP Basic Authentication for admin access
 
 ## Setup Instructions
 
